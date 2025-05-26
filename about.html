@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NXU</title>
+    
+    <!-- CSS and font imports -->
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poly:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!-- About Page Header Section -->
+    <section class="about-header">
+        <header>
+            <!-- Main Navigation Bar -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="campus.html">Campus</a></li>
+                    <li><a href="register.html" target="_blank">Register</a></li>
+                </ul>
+            </nav>
+            <div class="container">
+                <h1>About Nexus University</h1>
+                <p>Excellence in Education, Research, and Innovation</p>
+            </div>
+        </header>
+    </section>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="about-container">
+            <!-- University Introduction -->
+            <h1 class="about-heading">Welcome to Nexus University</h1>
+            <br>
+            <img src="uni2.jpg" alt="University campus view">
+            <p>At Nexus University, we are dedicated to fostering a vibrant academic community that encourages innovation, critical thinking, and personal growth. Established in 1998, our university has a rich history of excellence in education and research.</p>
+            
+            <!-- Mission Statement Section -->
+            <h3 class="para-heading">Our Mission</h3>
+            <p>Our mission is to provide a transformative educational experience that empowers students to become leaders in their fields. We strive to create an inclusive environment that promotes diversity, equity, and social responsibility.</p>
+            
+            <!-- Academic Programs Section -->
+            <h3 class="para-heading">Academic Excellence</h3>
+            <p>With a wide range of undergraduate and graduate programs across various disciplines, Nexus University is committed to academic excellence. Our faculty members are renowned scholars and practitioners who are passionate about teaching and mentoring students. We emphasize hands-on learning, research opportunities, and interdisciplinary collaboration.</p>
+            
+            <!-- Campus Life Section -->
+            <h3 class="para-heading">Campus Life</h3>
+            <p>Life at Nexus University extends beyond the classroom. Our campus is home to a diverse community of students from all walks of life. We offer a variety of extracurricular activities, including clubs, sports, and cultural events, ensuring that every student can find their niche and make lasting connections.</p>
+            
+            <!-- Research Section -->
+            <h3 class="para-heading">Research and Innovation</h3>
+            <p>Nexus University is at the forefront of research and innovation. Our state-of-the-art facilities and resources support groundbreaking research across various fields. We encourage students to engage in research projects that address real-world challenges and contribute to societal advancement.</p>
+            
+            <!-- Community Engagement Section -->
+            <h3 class="para-heading">Community Engagement</h3>
+            <p>We believe in the importance of giving back to the community. Nexus University actively participates in community service initiatives and partnerships that enhance the well-being of our local and global communities. Our students are encouraged to engage in service-learning opportunities that enrich their educational experience.</p>
+            
+            <!-- Comment Form Section -->
+            <div class="comment-section">
+                <form class="comment-form">
+                    <h3 class="para-heading">Leave a comment</h3>
+                    <!-- Name Input Field -->
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <!-- Email Input Field -->
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <!-- Comment Text Area -->
+                    <textarea id="comment" rows="4" placeholder="Leave a comment" required></textarea>
+                    <!-- Submit Button -->
+                    <button class="a-btn" type="button" id="submit">Post</button>
+                </form>
+                <div id="comments-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer">
+          <p>&copy; 2025 Nexus University. All rights reserved</p>
+          <div class="icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get form elements
+            const commentForm = document.querySelector('.comment-form');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const commentInput = document.getElementById('comment');
+            const submitButton = document.getElementById('submit');
+            const commentsContainer = document.getElementById('comments-container');
+            
+            // Load saved comments from localStorage
+            loadComments();
+            
+            // Add event listener to the submit button
+            submitButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Validate form inputs
+                if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || commentInput.value.trim() === '') {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                if (!validateEmail(emailInput.value)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+                
+                // Create comment object
+                const comment = {
+                    name: nameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    text: commentInput.value.trim(),
+                    date: new Date().toLocaleString()
+                };
+                
+                // Save comment
+                saveComment(comment);
+                
+                // Clear form
+                commentForm.reset();
+                
+                // Reload comments to show the new one
+                loadComments();
+            });
+            
+            // Function to save comment to localStorage
+            function saveComment(comment) {
+                let comments = JSON.parse(localStorage.getItem('nxu-comments')) || [];
+                comments.push(comment);
+                localStorage.setItem('nxu-comments', JSON.stringify(comments));
+            }
+            
+            // Function to load and display comments
+            function loadComments() {
+                const comments = JSON.parse(localStorage.getItem('nxu-comments')) || [];
+                commentsContainer.innerHTML = '';
+                
+                if (comments.length === 0) {
+                    commentsContainer.innerHTML = '<p>No comments yet. Be the first to comment!</p>';
+                    return;
+                }
+                
+                const commentsTitle = document.createElement('h3');
+                commentsTitle.textContent = 'Recent Comments';
+                commentsTitle.style.marginTop = '20px';
+                commentsContainer.appendChild(commentsTitle);
+                
+                comments.forEach(comment => {
+                    const commentDiv = document.createElement('div');
+                    commentDiv.className = 'comment-item';
+                    commentDiv.innerHTML = `
+                        <h4>${comment.name}</h4>
+                        <small>${comment.date}</small>
+                        <p>${comment.text}</p>
+                        <hr>
+                    `;
+                    commentsContainer.appendChild(commentDiv);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
