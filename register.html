@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    
+    <!-- CSS and font imports -->
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poly:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="registration-body">
+  <!-- Main page container -->
+  <div class="page-container">
+    <!-- Header section with navigation -->
+    <header class="registration-header">
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="campus.html">Campus</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main>
+      <!-- Registration form container -->
+      <div class="registration-form">
+        <h2>University Registration Form</h2>
+        
+        <!-- Registration form -->
+        <form id="registrationForm">
+          <!-- Personal Information Section -->
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="abc@example.com" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+971 xx xxx xxxx" required />
+
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required />
+
+          <!-- Program Selection -->
+          <label for="program">Program Applying For</label>
+          <select id="program" name="program" required>
+            <option value="">Select Program</option>
+            <option value="foundation">Foundation Year</option>
+            <option value="bsc">B.Sc</option>
+            <option value="bba">BBA</option>
+            <option value="ba">BEng</option>
+            <option value="msc">BA</option>
+            <option value="mba">MSc</option>
+          </select>
+
+          <!-- Document Upload Section -->
+          <div class="documents">
+            <label>Upload Required Documents (PDF/JPG/PNG):</label><br />
+            <label>High School Diploma <input type="file" name="doc_highschool" accept=".pdf,.jpg,.jpeg,.png" required /></label>
+            <label>Emirates ID <input type="file" name="doc_id" accept=".pdf,.jpg,.jpeg,.png" required /></label>
+            <label>Visa <input type="file" name="doc_visa" accept=".jpg,.jpeg,.png" required /></label>
+            <label>Passport Sized Photo <input type="file" name="doc_photo" accept=".jpg,.jpeg,.png" required /></label>
+            <label>Payment Receipt <input type="file" name="doc_fee" accept=".pdf,.jpg,.jpeg,.png" required /></label>
+          </div>
+
+          <!-- Fee Information Section -->
+          <div class="fee-plan">
+            <h3>Fee Plan</h3>
+            <ul>
+              <li>Application Fee: $100 (non-refundable)</li>
+              <li>Tuition Fee (per semester): $2,000</li>
+              <li>Library Fee: $50</li>
+              <li>Hostel Fee (optional): $500</li>
+            </ul>
+            <small>Note: Fee payment receipt must be uploaded with the application.</small>
+          </div>
+
+          <!-- Submit Button -->
+          <button class="r-btn" type="submit">Register</button>
+        </form>
+
+        <!-- Confirmation Message (hidden by default) -->
+        <div id="confirmation" class="confirmation-message">
+          <h2>Registration Successful!</h2>
+          <p>Thank you for registering. We will review your application and get back to you soon.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer Section -->
+    <footer>
+        <div class="footer">
+          <p>&copy; 2025 Nexus University. All rights reserved</p>
+          <div class="icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+    </footer>
+
+  <!-- JavaScript for form handling -->
+  <script>
+    // Get form and confirmation elements
+    const form = document.getElementById('registrationForm');
+    const confirmation = document.getElementById('confirmation');
+
+    // Initially hide confirmation message
+    confirmation.style.display = 'none';
+
+    // Form submission handler
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); 
+
+      // Check form validity
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Hide form and show confirmation
+      form.style.display = 'none';
+      confirmation.style.display = 'block';
+      
+      // Scroll to top for better visibility
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
