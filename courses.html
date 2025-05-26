@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - NXU</title>
+    
+    <!-- CSS and font imports -->
+    <link rel="stylesheet" href="stylee.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poly:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <!-- Course Header Section with Navigation -->
+    <section class="course-header">
+        <header>
+            <!-- Main Navigation Bar -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="campus.html">Campus</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Hero Banner with Title and Tagline -->
+            <div class="course-container">
+                <h1>Our Programs</h1>
+                <p>Explore our top university courses</p>
+            </div>
+        </header>
+    </section>
+
+    <!-- Program Filter Section -->
+    <div class="filter-bar">
+        <label>
+            Program Type:
+            <select id="programType">
+                <option value="all">All</option>
+                <option value="foundation">Foundation Year</option>
+                <option value="undergrad">Undergraduate</option>
+                <option value="grad">Graduate</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- Course Cards Container -->
+    <div class="courses-container">
+        <!-- Foundation Year Course Card -->
+        <div id="fy" class="course-card show" data-type="foundation">
+            <img src="fy.jpg" alt="Foundation Year in Science" />
+            <div class="course-title">Foundation Year in Science</div>
+            <div class="course-desc">Prepare for undergraduate study with essential science and academic skills.</div>
+            <div class="course-details">Duration: 1 year<br>Level: Foundation</div>
+            <a class="btn-c" href="#foundation-year">Learn More</a>
+        </div>
+
+        <!-- Computer Science Course Card -->
+        <div id="bcs" class="course-card show" data-type="undergrad">
+            <img src="c1.jpg" alt="Bachelor of Computer Science" />
+            <div class="course-title">Bachelor of Computer Science</div>
+            <div class="course-desc">Learn programming, algorithms, and software engineering to build the technology of tomorrow.</div>
+            <div class="course-details">Duration: 4 years<br>Degree: BSc</div>
+            <a class="btn-c" href="#bcs-details">Learn More</a>
+        </div>
+
+        <!-- Business Administration Course Card -->
+        <div id="bba" class="course-card show" data-type="undergrad">
+            <img src="bba.png" alt="Bachelor of Business Administration" />
+            <div class="course-title">Bachelor of Business Administration</div>
+            <div class="course-desc">Develop leadership, management, and analytical skills for a successful business career.</div>
+            <div class="course-details">Duration: 4 years<br>Degree: BBA</div>
+            <a class="btn-c" href="#bba-details">Learn More</a>
+        </div>
+
+        <!-- Mechanical Engineering Course Card -->
+        <div id="bme" class="course-card show" data-type="undergrad">
+            <img src="bme.jpg" alt="Bachelor of Mechanical Engineering" />
+            <div class="course-title">Bachelor of Mechanical Engineering</div>
+            <div class="course-desc">Design, analyze, and innovate mechanical systems to solve real-world challenges.</div>
+            <div class="course-details">Duration: 4 years<br>Degree: BEng</div>
+            <a class="btn-c" href="#bme-details">Learn More</a>
+        </div>
+
+        <!-- Psychology Course Card -->
+        <div id="psychology" class="course-card show" data-type="undergrad">
+            <img src="psy.png" alt="Bachelor of Psychology" />
+            <div class="course-title">Bachelor of Psychology</div>
+            <div class="course-desc">Study human behavior, mental processes, and research methods.</div>
+            <div class="course-details">Duration: 4 years<br>Degree: BA</div>
+            <a class="btn-c" href="#psychology-details">Learn More</a>
+        </div>
+
+        <!-- Data Science Course Card -->
+        <div id="grad" class="course-card show" data-type="grad">
+            <img src="ds.jpg" alt="Master of Data Science" />
+            <div class="course-title">Master of Data Science</div>
+            <div class="course-desc">Gain advanced skills in data analysis and machine learning.</div>
+            <div class="course-details">Duration: 2 years<br>Degree: MSc</div>
+            <a class="btn-c" href="#msc-details">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Course Details Introduction -->
+    <div class="c-details">
+        <h1>Course Details</h1>
+        <p>Our Courses are designed to shape your future</p>
+        <p>We offer a wide range of programs to suit your academic and career goals.</p>
+    </div>
+
+    <!-- Detailed Course Information Sections -->
+    <!-- Foundation Year Details -->
+    <section id="table">
+        <h2 id="foundation-year" class="details-heading">Foundation Year in Science</h2>
+        <div class="course-details">Duration: 1 year<br>Level: Foundation</div>
+        <p>The Foundation Year in Science is designed for students who wish to prepare for undergraduate study in various scientific disciplines. This one-year program focuses on developing essential academic skills, including critical thinking, research methodologies, and effective communication. Students will engage in a curriculum that covers fundamental concepts in biology, chemistry, and physics, providing a solid foundation for further studies in science. By the end of the program, students will be equipped with the knowledge and skills necessary to succeed in their chosen undergraduate programs.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fee (per year)</td>
+                    <td>$7,500</td>
+                </tr>
+                <tr>
+                    <td>Application Fee</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Student Services Fee</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Computer Science Details -->
+    <section id="table">
+        <h2 id="bcs-details" class="details-heading">Bachelor of Computer Science</h2>
+        <div class="course-details">Duration: 4 years<br>Degree: BSc</div>
+        <p>The Bachelor of Computer Science program offers a comprehensive education in programming, algorithms, and software engineering. Over four years, students will learn to design, develop, and implement software solutions that address real-world challenges. The curriculum includes hands-on projects, collaborative work, and exposure to the latest technologies in the field. Students will also explore topics such as data structures, web development, and artificial intelligence, preparing them for a successful career in the ever-evolving tech industry.</p>
+      <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fee (per year)</td>
+                    <td>$8,500</td>
+                </tr>
+                <tr>
+                    <td>Application Fee</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Student Services Fee</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Business Administration Details -->
+    <section id="table">
+        <h2 id="bba-details" class="details-heading">Bachelor of Business Administration</h2>
+        <div class="course-details">Duration: 4 years<br>Degree: BBA</div>
+        <p>The Bachelor of Business Administration (BBA) program is designed to equip students with the leadership, management, and analytical skills necessary for a successful career in business. Over four years, students will study core business disciplines, including marketing, finance, human resources, and operations management. The program emphasizes practical experience through internships, case studies, and group projects, allowing students to apply their knowledge in real-world settings. Graduates will emerge as well-rounded professionals ready to tackle the challenges of the business world.</p>
+      <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fee (per year)</td>
+                    <td>$8,500</td>
+                </tr>
+                <tr>
+                    <td>Application Fee</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Student Services Fee</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Mechanical Engineering Details -->
+    <section id="table">
+        <h2 id="bme-details" class="details-heading">Bachelor of Mechanical Engineering</h2>
+        <div class="course-details">Duration: 4 years<br>Degree: BEng</div>
+        <p>The Bachelor of Mechanical Engineering program prepares students to design, analyze, and innovate mechanical systems across various industries. This four-year degree combines theoretical knowledge with practical application, covering topics such as thermodynamics, fluid mechanics, materials science, and robotics. Students will engage in hands-on projects, laboratory work, and internships, gaining valuable experience in the field. Graduates will be equipped to pursue careers in manufacturing, aerospace, automotive, and other engineering sectors.</p>
+       <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fee (per year)</td>
+                    <td>$8,500</td>
+                </tr>
+                <tr>
+                    <td>Application Fee</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Student Services Fee</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+        </table>    </section>
+
+    <!-- Psychology Details -->
+    <section id="table">
+        <h2 id="psychology-details" class="details-heading">Bachelor of Psychology</h2>
+        <div class="course-details">Duration: 4 years<br>Degree: BA</div>
+        <p>The Bachelor of Psychology program offers an in-depth exploration of human behavior, mental processes, and psychological research methods. Over four years, students will study various psychological theories and practices, including cognitive, developmental, and social psychology. The curriculum emphasizes research skills, critical thinking, and ethical considerations in psychology. Students will have opportunities for practical experience through internships and research projects, preparing them for careers in counseling, social work, human resources, and more.</p>
+      <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fee (per year)</td>
+                    <td>$8,500</td>
+                </tr>
+                <tr>
+                    <td>Application Fee</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Student Services Fee</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+    </section>
+
+    <!-- Data Science Details -->
+    <section id="table">
+        <h2 id="msc-details" class="details-heading">Master of Data Science</h2>
+        <div class="course-details">Duration: 2 years<br>Degree: MSc</div>
+        <p>The Master of Data Science program is designed for individuals seeking to gain advanced skills in data analysis, machine learning, and big data technologies. Over two years, students will learn to extract insights from complex data sets and apply statistical methods to solve real-world problems. The curriculum includes coursework in data visualization, predictive modeling, and data mining, along with hands-on projects that simulate industry challenges. Graduates will be well-prepared for careers in data analytics, data engineering, and data-driven decision-making across various sectors.</p>
+     <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tuition Fee (per year)</td>
+                    <td>$10,500</td>
+                </tr>
+                <tr>
+                    <td>Application Fee</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>Student Services Fee</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Health Insurance</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+    </table>
+        </div>
+    </section>
+
+    <!-- Admission Requirements Section -->
+    <section id="table">
+        <h2>Admission Requirements</h2>
+        <table>
+             <tbody>
+                <tr>
+                    <td>Foundation Year</td>
+                    <td>High school diploma or equivalent</td>
+                    <td>IELTS 5.5 overall (minimum 5.0 in each band) or equivalent</td>
+                    <td>Designed for students needing academic and English preparation</td>
+                </tr>
+                <tr>
+                    <td>Bachelor's Degree</td>
+                    <td>High school diploma with minimum grades depending on the course</td>
+                    <td>IELTS 6.0 overall (minimum 5.5 in each band) or equivalent</td>
+                    <td>Some courses may require portfolio or entrance test</td>
+                </tr>
+                <tr>
+                    <td>Master's Degree</td>
+                    <td>Bachelor's degree in a related field</td>
+                    <td>IELTS 6.0 overall (minimum 5.5 in each band) or equivalent</td>
+                    <td>Some courses may require portfolio or entrance test</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- JavaScript for Program Filtering -->
+    <script>
+        // Get filter select element and all course cards
+        const select = document.getElementById('programType');
+        const cards = document.querySelectorAll('.course-card');
+        
+        // Add event listener for filter changes
+        select.addEventListener('change', function() {
+            const type = this.value;
+            
+            // Show/hide cards based on selected filter
+            cards.forEach(card => {
+                if (type === 'all' || card.getAttribute('data-type') === type) {
+                    card.classList.add('show');
+                } else {
+                    card.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer">
+          <p>&copy; 2025 Nexus University. All rights reserved</p>
+          <div class="icons">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+    </footer>
+</body>
+</html>
